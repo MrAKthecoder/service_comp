@@ -1,0 +1,258 @@
+.service-story {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #dce0d5;
+  border-radius: 24px;
+  background: #f5f4ec;
+  color: #243f35;
+}
+.story-topline {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 28px 0;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #617466;
+}
+.story-stage {
+  padding: 6px 20px 12px;
+}
+.story-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.story-svg-label,
+.story-svg-light,
+.story-svg-heading {
+  stroke: none;
+  fill: #294c3e;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.story-svg-light {
+  fill: #fffdf7;
+}
+.story-svg-heading {
+  font-size: 28px;
+}
+.story-caption {
+  font-size: clamp(20px, 2vw, 29px);
+  line-height: 1.25;
+  text-align: center;
+  max-width: 540px;
+  min-height: 74px;
+  margin: 12px auto 6px;
+  letter-spacing: -0.035em;
+}
+.story-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 26px;
+  border-top: 1px solid #dde2d6;
+}
+.story-controls > button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+.story-chapters {
+  display: flex;
+  gap: 7px;
+  flex: 1;
+}
+.story-chapters button {
+  height: 24px;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+.story-chapters button:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #d4ddcf;
+}
+.story-chapters button span {
+  position: relative;
+  height: 3px;
+  display: block;
+  background: #2d6548;
+}
+.story-chapters button[aria-current="step"]:before {
+  background: #8aa98a;
+}
+.story-controls button:focus-visible {
+  outline: 2px solid #2d6548;
+  outline-offset: 3px;
+}
+.story-note {
+  font-size: 11px !important;
+  color: #6a756a !important;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 20px 17px;
+  line-height: 1.5;
+}
+.story-scene,
+.story-caption {
+  animation: story-enter 0.6s ease both;
+}
+.story-person .story-arm {
+  transform-origin: 0 35px;
+}
+.story-playing .busy .story-arm {
+  animation: story-wave 1.8s ease-in-out infinite;
+}
+.story-playing .story-thought,
+.story-playing .story-notice,
+.story-playing .story-spark {
+  animation: story-float 2.4s ease-in-out infinite;
+}
+.story-message,
+.story-work {
+  animation: story-enter 0.65s both;
+}
+.reply,
+.work-1 {
+  animation-delay: 0.4s;
+}
+.work-2 {
+  animation-delay: 0.8s;
+}
+.story-playing .story-connect {
+  animation: story-dash 1s linear infinite;
+}
+.service-story:not(.story-playing) .story-arm,
+.service-story:not(.story-playing) .story-connect {
+  animation-play-state: paused !important;
+}
+.ws-wrap > .service-story {
+  max-width: 1100px;
+  margin: 0 auto 70px;
+}
+@keyframes story-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes story-wave {
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+@keyframes story-float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes story-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+@media (max-width: 600px) {
+  .story-topline {
+    padding: 18px 16px 0;
+    font-size: 8px;
+  }
+  .story-stage {
+    padding: 15px 0 6px;
+  }
+  .story-caption {
+    padding: 0 20px;
+    min-height: 76px;
+    font-size: 22px;
+  }
+  .story-controls {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .story-note {
+    font-size: 10px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-story * {
+    animation: none !important;
+  }
+}
+
+.story-playing .owner-worry {
+  animation: owner-sigh 2.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+}
+.story-playing .owner-typing {
+  animation: owner-type 0.65s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 0 50%;
+}
+.story-playing .story-click {
+  animation: owner-click 2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.story-arrival {
+  animation: owner-arrive 1.3s ease both;
+}
+.story-playing .story-clock {
+  animation: story-float 3s ease-in-out infinite;
+}
+@keyframes owner-sigh {
+  50% {
+    transform: translateY(4px) rotate(7deg);
+  }
+}
+@keyframes owner-type {
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+@keyframes owner-click {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translate(25px, 15px);
+  }
+  55%,
+  85% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes owner-arrive {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-story * {
+    animation: none !important;
+  }
+}

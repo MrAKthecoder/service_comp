@@ -1,0 +1,331 @@
+.services-trigger {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  gap: 6px;
+}
+.services-trigger > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.services-trigger > button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.services-trigger > button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.services-hover .mega-menu[hidden] {
+  display: none !important;
+}
+.services-hover .mega-menu {
+  top: 100%;
+  padding-top: 18px;
+}
+.services-hover .menu-view-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 12px 0;
+  padding: 16px 8px 6px;
+  border-top: 1px solid #dfe3d7;
+  color: #34754a;
+  font-size: 13px;
+}
+.services-trigger a:focus-visible,
+.services-trigger button:focus-visible {
+  outline: 2px solid #36a85f;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.client-faq {
+  width: 86%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 85px 0 110px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 9%;
+  align-items: start;
+}
+.client-faq.faq-compact {
+  display: block;
+  max-width: 980px;
+  padding: 70px 0 80px;
+}
+.faq-compact .client-faq-intro {
+  position: static;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.faq-compact .client-faq-intro h2 {
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 400;
+  letter-spacing: -1.6px;
+}
+.faq-compact .client-faq-intro p {
+  max-width: none;
+  margin: 0;
+  color: #5c6656;
+}
+.faq-categories {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid #dbe0d2;
+  background: #e9eddf;
+  border-radius: 15px;
+  margin-bottom: 22px;
+}
+.faq-categories button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 12px;
+  color: #52634b;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.faq-categories button[aria-pressed="true"] {
+  background: #294634;
+  color: #fffaf0;
+}
+.faq-categories button span {
+  font: 11px monospace;
+  opacity: 0.65;
+}
+.faq-categories button:focus-visible {
+  outline: 2px solid #34864f;
+  outline-offset: 3px;
+}
+.client-faq.faq-compact summary {
+  font-size: 18px;
+  padding: 21px 24px;
+}
+.client-faq.faq-compact details p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #4e5d47;
+  max-width: 800px;
+  padding: 0 65px 24px 24px;
+}
+.faq-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #dbe0d2;
+  margin-top: 25px;
+  padding-top: 22px;
+}
+.faq-contact p {
+  margin: 0;
+  color: #63705a;
+}
+.faq-contact a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #315c3b;
+  white-space: nowrap;
+}
+@media (max-width: 550px) {
+  .faq-categories {
+    gap: 3px;
+  }
+  .faq-categories button {
+    font-size: 12px;
+    padding: 13px 7px;
+  }
+  .faq-categories button span {
+    display: none;
+  }
+  .client-faq.faq-compact summary {
+    font-size: 16px;
+    padding: 18px;
+  }
+  .client-faq.faq-compact details p {
+    padding: 0 18px 20px;
+    font-size: 15px;
+  }
+  .faq-contact {
+    align-items: flex-start;
+    font-size: 14px;
+  }
+}
+.client-faq-intro {
+  position: sticky;
+  top: 140px;
+}
+.client-faq-intro h2 {
+  font-size: clamp(36px, 3.8vw, 60px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+.client-faq-intro p {
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 330px;
+  color: #777c70;
+}
+.client-faq-intro > a {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #34754a;
+  border-bottom: 1px solid #a5b89c;
+  padding-bottom: 8px;
+}
+.client-faq-group + .client-faq-group {
+  margin-top: 32px;
+}
+.client-faq-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 15px;
+}
+.client-faq-group h3 > span {
+  font: 11px monospace;
+  color: #628365;
+  border: 1px solid #d5ddcd;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+}
+.client-faq details {
+  background: #fcfaf6;
+  border: 1px solid #e0e2d8;
+  border-radius: 12px;
+  margin-top: 9px;
+  overflow: hidden;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.client-faq details[open] {
+  background: #f8fbf3;
+  border-color: #b6cbb0;
+}
+.client-faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.client-faq summary::-webkit-details-marker {
+  display: none;
+}
+.client-faq summary:focus-visible {
+  outline: 2px solid #388451;
+  outline-offset: -3px;
+  border-radius: 10px;
+}
+.faq-toggle {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #edf1e7;
+  color: #5b8158;
+}
+.faq-toggle svg {
+  transition: transform 0.2s;
+}
+.client-faq details[open] .faq-toggle svg {
+  transform: rotate(45deg);
+}
+.client-faq details p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #67705f;
+  padding: 0 60px 22px 22px;
+  margin: 0;
+}
+.blog-placeholder {
+  min-height: 70vh;
+  padding: 190px 7% 100px;
+  max-width: 1320px;
+  margin: auto;
+}
+.blog-placeholder h1 {
+  font-size: clamp(64px, 9vw, 120px);
+  letter-spacing: -5px;
+  margin: 20px 0;
+}
+.blog-placeholder p {
+  color: #7c8175;
+}
+@media (max-width: 900px) {
+  .header nav {
+    gap: 18px;
+  }
+  .client-faq {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    width: 90%;
+    padding: 60px 0 80px;
+  }
+  .client-faq-intro {
+    position: static;
+  }
+  .client-faq-intro p {
+    max-width: 450px;
+  }
+}
+@media (max-width: 800px) {
+  .services-trigger {
+    justify-content: space-between;
+  }
+  .services-hover .mega-menu {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 550px) {
+  .client-faq summary {
+    padding: 17px;
+    font-size: 14px;
+    gap: 12px;
+  }
+  .client-faq details p {
+    padding: 0 17px 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-toggle svg,
+  .client-faq details {
+    transition: none;
+  }
+}
+

@@ -1,0 +1,439 @@
+.website-film {
+  max-width: 1180px;
+  margin: 0 auto 72px;
+  background: #f9f7f0;
+  border: 1px solid #d9ddce;
+  border-radius: 22px;
+  overflow: hidden;
+  color: #294333;
+  box-shadow: 0 18px 55px -40px #263c3044;
+}
+.wf-top {
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #677862;
+}
+.wf-screen {
+  position: relative;
+  overflow: hidden;
+}
+.wf-scene-label {
+  position: absolute;
+  bottom: 17px;
+  left: 24px;
+  padding: 6px 10px;
+  border-radius: 15px;
+  color: #f7f3e7;
+  background: #243e3399;
+  font: 10px monospace;
+  letter-spacing: 0.14em;
+}
+.wa-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.wa-artwork text {
+  font-family: inherit;
+  fill: #2a4434;
+  stroke: none;
+}
+.wa-artwork .wa-label {
+  font-size: 12px;
+  letter-spacing: 0.035em;
+}
+.wa-artwork .wa-body {
+  font-size: 19px;
+  letter-spacing: -0.35px;
+}
+.wa-artwork .wa-brand {
+  font-size: 39px;
+  font-weight: 650;
+  letter-spacing: -2px;
+}
+.wa-artwork .wa-phone-title {
+  font-size: 28px;
+  letter-spacing: -1.1px;
+}
+.wa-artwork .wa-white {
+  fill: #faf7e9;
+}
+.wa-artwork .wa-url {
+  font-size: 11px;
+  fill: #6c7e67;
+}
+.wa-artwork .wa-shop-brand {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.wa-artwork .wa-site-title {
+  font-family: Georgia, serif;
+  font-size: 43px;
+  letter-spacing: -1.2px;
+}
+.wf-caption {
+  font-size: clamp(20px, 2.1vw, 29px);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  text-align: center;
+  margin: 0;
+  min-height: 88px;
+  display: grid;
+  place-items: center;
+  padding: 17px 24px;
+}
+.wf-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 28px 16px;
+}
+.wf-chapters button {
+  text-align: left;
+  font: inherit;
+  font-size: 14px;
+  color: #85907f;
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.wf-chapters button[aria-current] {
+  color: #294c3e;
+}
+.wf-chapters span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.wf-chapters small {
+  font-size: 10px;
+}
+.wf-chapters i {
+  display: block;
+  height: 3px;
+  background: #e1e5d9;
+  margin-top: 12px;
+}
+.wf-chapters b {
+  display: block;
+  height: 100%;
+  background: #3c694c;
+}
+.wf-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 22px;
+  border-top: 1px solid #e0e3d8;
+}
+.wf-controls button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 8px;
+  cursor: pointer;
+}
+.wf-controls input {
+  flex: 1;
+  min-width: 40px;
+  accent-color: #315e44;
+  cursor: pointer;
+}
+.wf-controls span {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.wf-note {
+  font-size: 10px;
+  text-align: center;
+  margin: 0 0 14px;
+  color: #7c8876;
+}
+.website-film button:focus-visible,
+.website-film input:focus-visible {
+  outline: 2px solid #315e44;
+  outline-offset: 4px;
+}
+.wa-scene {
+  animation: wa-scene-enter 0.6s ease both;
+}
+.wa-room-camera {
+  animation: wa-dolly 5s ease-in-out both;
+  transform-origin: 50% 55%;
+}
+.wa-head {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+}
+.wa-worried .wa-head {
+  animation: wa-sigh 3.6s ease-in-out infinite;
+}
+.wa-blinking {
+  animation: wa-blink 4s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.wa-winking .wa-right-eye {
+  animation: wa-wink 2.5s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.wa-thumb-arm {
+  animation: wa-thumbs 2.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: left bottom;
+}
+.wa-working-hands {
+  animation: wa-work 1.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: left top;
+}
+.wa-thought {
+  animation: wa-rise 0.8s 0.4s both;
+}
+.wa-phone-in {
+  animation: wa-phone-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.wa-phone-touch {
+  animation: wa-touch 4s both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.wa-chat-one {
+  animation: wa-rise 0.7s 0.2s both;
+}
+.wa-chat-two {
+  animation: wa-rise 0.7s 1.3s both;
+}
+.wa-advisor-badge {
+  animation: wa-rise 0.8s 1.5s both;
+}
+.wa-site-build {
+  animation: wa-assemble 3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.wa-device-reveal {
+  animation: wa-rise 0.9s both;
+}
+.wa-design-chip {
+  animation: wa-rise 0.8s 0.4s both;
+}
+.wa-mobile-preview {
+  animation: wa-rise 1s 1.1s both;
+}
+.wa-arrive {
+  animation: wa-arrive 2s ease both;
+}
+.wa-delayed {
+  animation-delay: 0.6s;
+}
+.wa-order-float {
+  animation: wa-rise 0.8s 1.1s both;
+}
+.wa-checkout {
+  animation: wa-rise 0.8s 0.6s both;
+}
+.wa-laptop-close {
+  animation: wa-laptop-zoom 4s ease-in-out both;
+  transform-origin: 35% 50%;
+}
+.wa-team-finish {
+  animation: wa-rise 0.8s 0.5s both;
+}
+.wa-welcome {
+  animation: wa-rise 0.8s 1.3s both;
+}
+.wf-paused .wa-artwork * {
+  animation-play-state: paused !important;
+}
+.wf-paused .wa-scene,
+.wf-paused .wa-thought,
+.wf-paused .wa-phone-in,
+.wf-paused .wa-phone-touch,
+.wf-paused .wa-chat-one,
+.wf-paused .wa-chat-two,
+.wf-paused .wa-advisor-badge,
+.wf-paused .wa-site-build,
+.wf-paused .wa-device-reveal,
+.wf-paused .wa-design-chip,
+.wf-paused .wa-mobile-preview,
+.wf-paused .wa-arrive,
+.wf-paused .wa-order-float,
+.wf-paused .wa-checkout,
+.wf-paused .wa-team-finish,
+.wf-paused .wa-welcome {
+  animation: none;
+  opacity: 1;
+}
+@keyframes wa-scene-enter {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes wa-dolly {
+  to {
+    transform: scale(1.025);
+  }
+}
+@keyframes wa-sigh {
+  50% {
+    transform: rotate(5deg) translateY(3px);
+  }
+}
+@keyframes wa-blink {
+  0%,
+  42%,
+  47%,
+  100% {
+    transform: scaleY(1);
+  }
+  44%,
+  45% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes wa-wink {
+  0%,
+  45%,
+  67%,
+  100% {
+    transform: scaleY(1);
+  }
+  52%,
+  61% {
+    transform: scaleY(0.12) rotate(-12deg);
+  }
+}
+@keyframes wa-thumbs {
+  50% {
+    rotate: -6deg;
+  }
+}
+@keyframes wa-work {
+  50% {
+    rotate: 2deg;
+  }
+}
+@keyframes wa-rise {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes wa-phone-in {
+  from {
+    opacity: 0;
+    translate: 50px 25px;
+    rotate: 3deg;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+@keyframes wa-touch {
+  0%,
+  22% {
+    opacity: 0;
+    translate: 24px 36px;
+  }
+  45%,
+  70% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  78% {
+    scale: 0.92;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes wa-assemble {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    translate: 0 8px;
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+    translate: 0 0;
+  }
+}
+@keyframes wa-arrive {
+  from {
+    opacity: 0;
+    translate: 50px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes wa-laptop-zoom {
+  from {
+    transform: scale(0.94);
+  }
+  to {
+    transform: scale(1.015);
+  }
+}
+@media (max-width: 600px) {
+  .wf-top {
+    padding: 16px 14px;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+  }
+  .wf-chapters {
+    padding: 0 14px 12px;
+    gap: 12px;
+  }
+  .wf-chapters button {
+    font-size: 11px;
+  }
+  .wf-caption {
+    min-height: 85px;
+    font-size: 21px;
+    padding: 15px 18px;
+  }
+  .wf-controls {
+    padding: 10px;
+    gap: 6px;
+  }
+  .website-film {
+    border-radius: 16px;
+  }
+  .wf-note {
+    font-size: 9px;
+  }
+  .wf-scene-label {
+    bottom: 9px;
+    left: 12px;
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-artwork * {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,405 @@
+/* The example is part of the first screen, not another section to decipher. */
+.service-cinema {
+  background: #f5f3ee;
+  color: #202b24;
+  padding-top: 120px;
+}
+.service-cinema .detail-back,
+.service-cinema .eyebrow {
+  color: #526557;
+}
+.service-opening {
+  display: grid;
+  grid-template-columns: 0.8fr 1.25fr;
+  gap: 5%;
+  align-items: center;
+  margin: 35px 0 75px;
+}
+.service-cinema .detail-heading {
+  text-align: left;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0;
+}
+.service-cinema .detail-heading h1 {
+  font-size: clamp(42px, 4.4vw, 74px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+.service-cinema .detail-heading p {
+  font-size: 20px;
+  color: #526052;
+  max-width: 430px;
+}
+.service-cinema .detail-theatre {
+  position: relative;
+  background: #e6e9df;
+  border-radius: 18px;
+  min-width: 0;
+}
+.service-cinema .detail-scene {
+  padding: 30px;
+  min-height: 530px;
+}
+.service-cinema .detail-caption {
+  padding: 12px 20px;
+  justify-content: space-between;
+  background: #eeeee6;
+}
+.service-cinema .detail-caption p {
+  font-size: 13px;
+  color: #536052;
+}
+.service-cinema .detail-inclusions {
+  border-color: #cdd4c9;
+  padding: 55px 0;
+}
+.service-cinema .detail-inclusion-grid details,
+.service-cinema .detail-question,
+.service-cinema .detail-related {
+  border-color: #ccd3c7;
+}
+.service-cinema .detail-inclusion-grid p,
+.service-cinema .detail-start p,
+.service-cinema .detail-question p,
+.service-cinema .detail-next > div > a,
+.service-cinema .detail-related > span {
+  color: #526052;
+}
+.service-cinema .detail-start {
+  display: none;
+}
+.service-cinema .detail-next {
+  padding: 45px 0;
+}
+.service-cinema .detail-inclusions h2 {
+  font-size: 42px;
+}
+.service-reel {
+  position: relative;
+  height: 570px;
+  overflow: hidden;
+  background: #182d23;
+  color: #fff;
+}
+.service-cinema.detail-social .detail-scene,
+.service-cinema.detail-content .detail-scene {
+  padding: 0;
+}
+.service-reel .reel-landscape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: reel-drift 15s ease-in-out infinite alternate;
+  transition: opacity 1.2s;
+}
+.reel-landscape-b {
+  opacity: 0;
+}
+.reel-frame-1 .reel-landscape-b {
+  opacity: 1;
+}
+.reel-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#101e2630, transparent 25%, #101e26c9);
+}
+.reel-brand {
+  position: absolute;
+  top: 34px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.reel-brand > span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.reel-title {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 95px;
+  animation: reel-type 0.8s both;
+}
+.reel-title > span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.service-reel .reel-title h3 {
+  font-size: clamp(40px, 4.2vw, 68px);
+  line-height: 1.04;
+  max-width: 510px;
+  margin: 18px 0 0;
+  color: #fff;
+}
+.reel-format {
+  position: absolute;
+  bottom: 35px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.reel-format > span:last-child {
+  font-size: 30px;
+}
+.reel-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ffffff30;
+}
+.reel-progress i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #d9efba;
+  transform-origin: left;
+  animation: reel-time 5s linear both;
+}
+.service-cinema .web-product {
+  display: block;
+  position: relative;
+  padding: 0 0 70px;
+}
+.service-cinema .product-desktop {
+  margin-right: 60px;
+}
+.service-cinema .product-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 190px;
+  padding: 15px;
+  border-width: 5px;
+  box-shadow: 0 18px 35px #152e2530;
+}
+.service-cinema .product-phone h4 {
+  font-size: 20px;
+}
+.service-cinema .phone-home,
+.service-cinema .phone-date,
+.service-cinema .product-phone > p,
+.service-cinema .north-bottom,
+.service-cinema .product-caption {
+  display: none;
+}
+.service-cinema .phone-brand {
+  font-size: 15px;
+}
+.service-cinema .phone-brand > span {
+  display: none;
+}
+.service-cinema .north-hero {
+  height: 330px;
+}
+.service-cinema .north-hero h3 {
+  font-size: 36px;
+}
+.service-cinema .north-header > span {
+  display: none;
+}
+.service-cinema .local-search,
+.service-cinema .advertising-board,
+.service-cinema .workflow-product,
+.service-cinema .reputation-product {
+  grid-template-columns: 1fr;
+}
+.service-cinema .search-audit,
+.service-cinema .ad-path,
+.service-cinema .workflow-sidebar,
+.service-cinema .brand-rules {
+  display: none;
+}
+.service-cinema .brand-specimen {
+  min-height: 170px;
+  padding: 22px;
+}
+.service-cinema .brand-wordmark {
+  margin: 10px 0;
+  font-size: 50px;
+}
+.service-cinema .reputation-product {
+  gap: 20px;
+}
+.service-cinema .crm-product-body {
+  grid-template-columns: 1fr;
+}
+.service-cinema .crm-contact-list {
+  display: flex;
+  padding: 8px;
+}
+.service-cinema .crm-contact-list button {
+  flex: 1;
+  padding: 10px;
+}
+.service-cinema .crm-contact-list button > svg,
+.service-cinema .crm-contact-list button small {
+  display: none;
+}
+.service-cinema .strategy-title {
+  display: block;
+}
+.service-cinema .strategy-title > p {
+  display: none;
+}
+.service-cinema .strategy-columns {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.service-cinema .strategy-columns > div {
+  padding: 15px;
+}
+.service-cinema .strategy-columns p,
+.service-cinema .strategy-columns svg {
+  display: none;
+}
+.demo-running .north-hero > img {
+  animation: reel-drift 12s ease-in-out infinite alternate;
+}
+.service-cinema .campaign-heading,
+.service-cinema .campaign-posts article > span,
+.service-cinema .campaign-posts footer {
+  display: none;
+}
+.service-cinema .campaign-posts {
+  display: block;
+  max-width: 380px;
+  margin: auto;
+}
+.service-cinema .campaign-posts article:not(.post-selected) {
+  display: none;
+}
+.service-cinema .campaign-posts article {
+  animation: reel-type 0.8s both;
+}
+.service-cinema .campaign-posts article > div {
+  height: 530px;
+}
+.service-cinema.detail-social .detail-scene {
+  padding: 30px;
+}
+.demo-running .daybreak-photo > img {
+  animation: reel-drift 12s ease-in-out infinite alternate;
+}
+.demo-running .movement-graphic {
+  animation: reel-turn 15s linear infinite;
+}
+.demo-still * {
+  animation-play-state: paused !important;
+}
+@keyframes reel-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12) translate(-1%, 1%);
+  }
+}
+@keyframes reel-type {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes reel-time {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes reel-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 900px) {
+  .service-opening {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .service-cinema .detail-heading {
+    max-width: 650px;
+  }
+  .service-cinema .detail-heading h1 {
+    font-size: clamp(42px, 8vw, 65px);
+  }
+  .service-cinema .detail-scene {
+    min-height: 400px;
+  }
+  .service-reel {
+    height: 520px;
+  }
+}
+@media (max-width: 550px) {
+  .service-cinema {
+    padding-top: 100px;
+  }
+  .service-opening {
+    margin-top: 25px;
+  }
+  .service-cinema .detail-heading p {
+    font-size: 18px;
+  }
+  .service-reel {
+    height: 450px;
+  }
+  .reel-brand,
+  .reel-title,
+  .reel-format {
+    left: 22px;
+    right: 22px;
+  }
+  .reel-brand > span {
+    display: none;
+  }
+  .service-cinema .detail-scene {
+    padding: 18px;
+  }
+  .service-cinema .product-desktop {
+    margin-right: 0;
+  }
+  .service-cinema .north-hero h3 {
+    font-size: 30px;
+  }
+  .service-cinema .product-phone {
+    position: relative;
+    align-self: flex-end;
+    margin-top: -65px;
+    max-width: 190px;
+  }
+  .service-cinema .web-product {
+    padding-bottom: 0;
+  }
+  .service-cinema .crm-contact-list button {
+    font-size: 12px;
+  }
+  .service-cinema .detail-inclusions h2 {
+    font-size: 34px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-cinema * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,511 @@
+/* Five-second stories run only in the active card. */
+.service-demo {
+  position: relative;
+  isolation: isolate;
+  margin: 22px -8px 24px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f3ec;
+}
+.service-demo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.demo-halo {
+  fill: #e5ebdf;
+  opacity: 0.6;
+}
+.demo-panel {
+  fill: #fffefa;
+  stroke: #d2dbce;
+  stroke-width: 1;
+}
+.demo-line {
+  stroke: #b4c1ae;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.demo-dot {
+  fill: #a4b59b;
+}
+.demo-sage {
+  fill: #dce7d4;
+}
+.demo-well {
+  fill: #f0f3eb;
+}
+.demo-green {
+  fill: #26995a;
+}
+.demo-dark {
+  fill: #233c2c;
+}
+.demo-text,
+.demo-small,
+.demo-title,
+.demo-white,
+.demo-symbol {
+  font-family: inherit;
+  fill: #374a36;
+}
+.demo-text {
+  font-size: 10px;
+  font-weight: 500;
+}
+.demo-small {
+  font-size: 8px;
+  fill: #7a8873;
+}
+.demo-title {
+  font-size: 15px;
+  letter-spacing: -0.5px;
+}
+.demo-white {
+  font-size: 8px;
+  fill: #fff;
+}
+.demo-symbol {
+  font-size: 25px;
+  fill: #2f8e53;
+}
+.demo-wave {
+  stroke: #6d9168;
+  stroke-width: 2;
+}
+.demo-captions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 21px;
+  height: 14px;
+  text-align: center;
+}
+.caption {
+  position: absolute;
+  inset: 0;
+  font-size: 11px;
+  color: #55704f;
+  opacity: 0;
+}
+.caption-0 {
+  opacity: 1;
+}
+.demo-progress {
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  background: #e0e6d9;
+}
+.demo-progress i {
+  display: block;
+  height: 100%;
+  background: #48a46a;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.motion {
+  --duration: 5.4s;
+}
+.service-demo .success {
+  opacity: 0;
+}
+.feature-card:is(:hover, :focus-visible) .motion,
+.service-demo[data-playing="true"] .motion {
+  animation-duration: var(--duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.22, 0.7, 0.3, 1);
+  animation-fill-mode: both;
+}
+.feature-card:is(:hover, :focus-visible) .post,
+.service-demo[data-playing="true"] .post {
+  animation-name: post-publish;
+}
+.post-0 {
+  --delay: 0s;
+}
+.post-1 {
+  --delay: 0.18s;
+}
+.post-2 {
+  --delay: 0.36s;
+}
+.feature-card:is(:hover, :focus-visible) .post {
+  animation-delay: var(--delay);
+}
+.feature-card:is(:hover, :focus-visible) .success,
+.service-demo[data-playing="true"] .success {
+  animation-name: demo-success;
+}
+.feature-card:is(:hover, :focus-visible) .caption-0,
+.service-demo[data-playing="true"] .caption-0 {
+  animation-name: caption-first;
+}
+.feature-card:is(:hover, :focus-visible) .caption-1,
+.service-demo[data-playing="true"] .caption-1 {
+  animation-name: caption-second;
+}
+.feature-card:is(:hover, :focus-visible) .caption-2,
+.service-demo[data-playing="true"] .caption-2 {
+  animation-name: caption-third;
+}
+.feature-card:is(:hover, :focus-visible) .demo-progress i,
+.service-demo[data-playing="true"] .demo-progress i {
+  animation-name: demo-progress;
+  animation-timing-function: linear;
+}
+.feature-card:is(:hover, :focus-visible) .film,
+.service-demo[data-playing="true"] .film {
+  animation-name: film-pan;
+}
+.feature-card:is(:hover, :focus-visible) .subtitle,
+.feature-card:is(:hover, :focus-visible) .reply,
+.feature-card:is(:hover, :focus-visible) .enquiry,
+.service-demo[data-playing="true"] :is(.subtitle, .reply, .enquiry) {
+  animation-name: demo-arrive;
+}
+.feature-card:is(:hover, :focus-visible) .playhead,
+.service-demo[data-playing="true"] .playhead {
+  animation-name: playhead;
+  animation-timing-function: linear;
+}
+.feature-card:is(:hover, :focus-visible)
+  :is(.build-one, .build-two, .build-three),
+.service-demo[data-playing="true"] :is(.build-one, .build-two, .build-three) {
+  animation-name: assemble;
+}
+.build-two {
+  animation-delay: 0.3s;
+}
+.build-three {
+  animation-delay: 0.6s;
+}
+.feature-card:is(:hover, :focus-visible) .phone,
+.service-demo[data-playing="true"] .phone {
+  animation-name: phone-arrive;
+}
+.feature-card:is(:hover, :focus-visible) .desktop,
+.service-demo[data-playing="true"] .desktop {
+  animation-name: desktop-shift;
+}
+.feature-card:is(:hover, :focus-visible) .search-type,
+.service-demo[data-playing="true"] .search-type {
+  animation-name: search-type;
+}
+.feature-card:is(:hover, :focus-visible) .search-result,
+.service-demo[data-playing="true"] .search-result {
+  animation-name: demo-arrive;
+}
+.feature-card:is(:hover, :focus-visible) .pin,
+.service-demo[data-playing="true"] .pin {
+  animation-name: pin-drop;
+}
+.connector,
+.energy,
+.growth-line {
+  stroke: #31925a;
+  stroke-width: 2;
+  fill: none;
+}
+.feature-card:is(:hover, :focus-visible) :is(.connector, .growth-line),
+.service-demo[data-playing="true"] :is(.connector, .growth-line) {
+  animation-name: draw-route;
+  stroke-dasharray: 220;
+}
+.feature-card:is(:hover, :focus-visible) .energy,
+.service-demo[data-playing="true"] .energy {
+  animation-name: energy;
+  stroke-dasharray: 18 210;
+}
+.feature-card:is(:hover, :focus-visible) .node,
+.service-demo[data-playing="true"] .node {
+  animation-name: node-light;
+}
+.node-1 {
+  animation-delay: 0.6s;
+}
+.node-2 {
+  animation-delay: 1.2s;
+}
+.star {
+  fill: #a9bc9f;
+  font-size: 20px;
+}
+.feature-card:is(:hover, :focus-visible) .star,
+.service-demo[data-playing="true"] .star {
+  animation-name: star-light;
+}
+.star-1 {
+  animation-delay: 0.15s;
+}
+.star-2 {
+  animation-delay: 0.3s;
+}
+.star-3 {
+  animation-delay: 0.45s;
+}
+.star-4 {
+  animation-delay: 0.6s;
+}
+.feature-card:is(:hover, :focus-visible) .lead,
+.service-demo[data-playing="true"] .lead {
+  animation-name: lead-travel;
+}
+.bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+.feature-card:is(:hover, :focus-visible) .bar,
+.service-demo[data-playing="true"] .bar {
+  animation-name: bar-grow;
+}
+.bar-1 {
+  animation-delay: 0.15s;
+}
+.bar-2 {
+  animation-delay: 0.3s;
+}
+.bar-3 {
+  animation-delay: 0.45s;
+}
+@keyframes post-publish {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(24px) rotate(-5deg);
+  }
+  18%,
+  78% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+  90% {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+}
+@keyframes demo-success {
+  0%,
+  49%,
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  60%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes demo-arrive {
+  0%,
+  22%,
+  100% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  39%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes assemble {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  25%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes caption-first {
+  0%,
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  33%,
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+@keyframes caption-second {
+  0%,
+  28%,
+  66%,
+  100% {
+    opacity: 0;
+  }
+  37%,
+  58% {
+    opacity: 1;
+  }
+}
+@keyframes caption-third {
+  0%,
+  63%,
+  100% {
+    opacity: 0;
+  }
+  72%,
+  92% {
+    opacity: 1;
+  }
+}
+@keyframes demo-progress {
+  0% {
+    transform: scaleX(0);
+  }
+  94%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes film-pan {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  45%,
+  85% {
+    transform: translateX(-9px);
+  }
+}
+@keyframes playhead {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  88% {
+    transform: translateX(230px);
+  }
+}
+@keyframes phone-arrive {
+  0%,
+  38%,
+  100% {
+    opacity: 0;
+    transform: translate(40px, 15px);
+  }
+  56%,
+  88% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes desktop-shift {
+  0%,
+  35%,
+  100% {
+    transform: translateX(0);
+  }
+  55%,
+  88% {
+    transform: translateX(-12px);
+  }
+}
+@keyframes search-type {
+  0%,
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+  30%,
+  90% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes pin-drop {
+  0%,
+  40%,
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  56% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  64%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes draw-route {
+  0%,
+  16%,
+  100% {
+    stroke-dashoffset: 220;
+  }
+  65%,
+  90% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes energy {
+  0% {
+    stroke-dashoffset: 25;
+  }
+  65%,
+  100% {
+    stroke-dashoffset: -210;
+  }
+}
+@keyframes node-light {
+  0%,
+  15%,
+  100% {
+    fill: #fffefa;
+  }
+  35%,
+  75% {
+    fill: #c9e6c9;
+  }
+}
+@keyframes star-light {
+  0%,
+  100% {
+    fill: #c9d2c1;
+  }
+  28%,
+  85% {
+    fill: #2d9957;
+  }
+}
+@keyframes lead-travel {
+  0%,
+  12%,
+  100% {
+    transform: translateX(0);
+  }
+  32%,
+  46% {
+    transform: translateX(89px);
+  }
+  65%,
+  88% {
+    transform: translateX(178px);
+  }
+}
+@keyframes bar-grow {
+  0%,
+  100% {
+    transform: scaleY(0.12);
+  }
+  50%,
+  88% {
+    transform: scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-demo .motion {
+    animation: none !important;
+  }
+}

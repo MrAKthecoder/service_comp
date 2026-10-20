@@ -1,0 +1,67 @@
+.service-opening > .website-film {
+  width: 100%;
+  min-width: 0;
+}
+.sf-reveal {
+  animation: sf-reveal 0.9s both;
+}
+.sf-product-pan {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sf-pan 5s ease-in-out infinite alternate;
+}
+.sf-playhead {
+  animation: sf-playhead 5s linear infinite;
+}
+.sf-route {
+  stroke-dasharray: 380;
+  animation: sf-route 3s both;
+}
+.sf-pin {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: sf-pin 2.5s ease-in-out infinite;
+}
+.sf-check {
+  animation: sf-reveal 0.8s both;
+}
+.wf-paused .sf-reveal,
+.wf-paused .sf-check {
+  animation: none;
+}
+@keyframes sf-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sf-pan {
+  to {
+    transform: scale(1.07) rotate(2deg);
+  }
+}
+@keyframes sf-playhead {
+  to {
+    transform: translateX(650px);
+  }
+}
+@keyframes sf-route {
+  from {
+    stroke-dashoffset: 380;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sf-pin {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-artwork * {
+    animation: none !important;
+  }
+}

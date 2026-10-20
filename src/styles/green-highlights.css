@@ -1,0 +1,35 @@
+/* Original green design, with targeted emphasis on actions and key labels. */
+.button:not(.outline):not(.button-outline):not(.glass):not(.dark),
+.nav-contact,
+.story-contact {
+  background: linear-gradient(135deg, #55ed99, #20d975);
+  color: #102d1d;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 #c9ffe080, 0 4px 14px #1dd77718;
+}
+.button:not(.outline):not(.button-outline):not(.glass):not(.dark):hover,
+.nav-contact:hover,
+.story-contact:hover {
+  background: linear-gradient(135deg, #77f3af, #32e286);
+  color: #102d1d;
+  box-shadow: inset 0 1px 0 #e1ffed, 0 6px 18px #1dd77725;
+}
+.button.outline, .button-outline, .button.glass { font-weight: 600; }
+.story-contact { font-size: 13px; }
+.feature-card-copy h3 { font-weight: 550; }
+.feature-card-action { font-weight: 600; color: #245a39; }
+.feature-card-action svg { color: #168545; }
+.feature-card:hover { border-color: #71bc8b; }
+.story-playlist button[aria-pressed="true"] {
+  background: #34543b;
+  color: #f5ffed;
+  box-shadow: inset 0 1px 0 #b8eb9a26;
+  font-weight: 600;
+}
+.story-playlist button[aria-pressed="true"] .story-playlist-number { color: #bce5a3; }
+.story-playlist-line > span { background: #65e696; }
+.story-cinema-heading strong { font-weight: 600; color: #e2f2cd; }
+.story-caption h2 { font-weight: 500; }
+.service-goals button[aria-pressed="true"],
+.faq-categories button[aria-pressed="true"] { font-weight: 600; }
+.story-hero button:focus-visible, .story-hero a:focus-visible { outline-color: #83efa8; }

@@ -1,0 +1,205 @@
+/* Service cards: motion stays within the selected card. */
+.growth-services-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  scroll-margin-top: 105px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  background: #fcfaf6;
+  border: 1px solid #dedfd5;
+  border-radius: 20px;
+  overflow: hidden;
+  color: #20231e;
+  transition:
+    border-color 0.25s,
+    background 0.25s;
+}
+.feature-card:hover,
+.feature-card:focus-visible {
+  background: #fffefb;
+  border-color: #92b79a;
+}
+.feature-card:focus-visible {
+  outline: 2px solid #29874b;
+  outline-offset: 5px;
+}
+.feature-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: #737e6e;
+  letter-spacing: 0.04em;
+}
+.feature-card-top > span:first-child {
+  font-family: monospace;
+}
+.feature-art {
+  width: 100%;
+  height: 155px;
+  margin: 18px 0 22px;
+  stroke: #a0afa0;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: hidden;
+}
+.feature-art rect {
+  fill: #fcfaf6;
+}
+.feature-art .art-fill {
+  fill: #e4eee1;
+  stroke: #b8ccb4;
+}
+.feature-art .art-accent {
+  stroke: #338756;
+}
+.art-main,
+.art-side {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.feature-card:hover .art-main,
+.feature-card:focus-visible .art-main {
+  transform: translateY(-5px);
+}
+.feature-card:hover .art-side,
+.feature-card:focus-visible .art-side {
+  transform: translateY(3px);
+}
+.feature-ads:hover .art-main,
+.feature-ads:focus-visible .art-main {
+  transform: translate(-5px, 4px);
+}
+.feature-content:hover .art-main,
+.feature-content:focus-visible .art-main {
+  transform: scale(1.09);
+}
+.art-flow {
+  stroke-dasharray: 5 7;
+}
+.feature-card:hover .art-flow,
+.feature-card:focus-visible .art-flow {
+  animation: service-flow 1.5s linear infinite;
+}
+.feature-card:hover .art-line,
+.feature-card:focus-visible .art-line {
+  stroke-dasharray: 180;
+  animation: service-draw 0.8s ease both;
+}
+.feature-card-copy h3 {
+  font-size: 23px;
+  line-height: 1.23;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  margin: 0 0 13px;
+  max-width: 290px;
+}
+.feature-card-copy p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #73766d;
+  margin: 0 0 25px;
+}
+.feature-card-action {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 19px;
+  border-top: 1px solid #e5e7de;
+  font-size: 12px;
+  color: #496f51;
+}
+.feature-card-action svg {
+  transition: transform 0.3s;
+}
+.feature-card:hover .feature-card-action svg,
+.feature-card:focus-visible .feature-card-action svg {
+  transform: translate(3px, -3px);
+}
+.feature-grid-all {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.feature-grid-all .feature-card {
+  padding: 35px 38px;
+}
+.feature-grid-all .feature-art {
+  height: 190px;
+  margin: 20px 0 26px;
+}
+.feature-grid-all .feature-card-copy h3 {
+  max-width: none;
+  font-size: 29px;
+}
+.feature-grid-all .feature-card-copy p {
+  max-width: 410px;
+  font-size: 15px;
+}
+.feature-grid-all .feature-card:hover .art-main {
+  transform: translateY(-8px) scale(1.04);
+}
+@keyframes service-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+@keyframes service-draw {
+  from {
+    stroke-dashoffset: 180;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (max-width: 1050px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .growth-services-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feature-card,
+  .feature-grid-all .feature-card {
+    padding: 25px;
+  }
+  .feature-art {
+    height: 145px;
+    margin: 12px 0 18px;
+  }
+  .feature-grid-all .feature-art {
+    height: 170px;
+  }
+  .feature-card-copy h3,
+  .feature-grid-all .feature-card-copy h3 {
+    font-size: 25px;
+    max-width: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-card * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
