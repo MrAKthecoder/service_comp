@@ -71,7 +71,7 @@ export function HeroFilm() {
       aria-label="Nine ways FORMA helps your business"
       data-story={story.id}
       data-shot={shot}
-      data-playing={playing}
+      data-playing={playing && visible && tabVisible}
     >
       <div className="story-hero-layout">
         <div className="story-hero-intro">
@@ -84,8 +84,8 @@ export function HeroFilm() {
             <em>a little help.</em>
           </h1>
           <p>
-            A shop. A happy owner. A team behind the scenes. <br />
-            See what we can do for your business.
+            Websites, marketing and automation for small businesses. <br />
+            Get found online, reach more customers and simplify your day.
           </p>
           <Link className="story-contact" to="/contact">
             Let’s talk about your business <ArrowUpRight size={17} />

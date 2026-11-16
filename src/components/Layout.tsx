@@ -33,10 +33,13 @@ export function Layout() {
       "/services": "Our services",
       "/contact": "Let’s talk",
       "/blog": "Blog",
+      "/work": "Our work",
+      "/packages": "Packages",
+      "/insights": "Insights",
       "/privacy": "Privacy",
       "/terms": "Terms",
     };
-    document.title = `${title || titles[pathname] || "Page not found"} — ${site.name}`;
+    document.title = `${title || titles[pathname] || (pathname.startsWith("/work/") ? "Project" : "Page not found")} — ${site.name}`;
   }, [pathname]);
   useEffect(() => {
     if (!hash) return;

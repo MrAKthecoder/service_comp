@@ -1,17 +1,25 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/HomePage";
-import { ServicePage } from "./pages/ServicePage";
-import { ServicesPage } from "./pages/ServicesPage";
-import { ProcessExperience } from "./pages/ProcessExperience";
-import { WorkPage, ProjectPage } from "./pages/WorkPage";
-import { ContactPage } from "./pages/ContactPage";
-import { AuditPage, StudioPage } from "./pages/BusinessPages";
-import { InfoPage, NotFoundPage, PackagesPage } from "./pages/SupportingPages";
+const ServicePage = lazy(() => import("./pages/ServicePage").then(m => ({ default: m.ServicePage })));
+const ServicesPage = lazy(() => import("./pages/ServicesPage").then(m => ({ default: m.ServicesPage })));
+const ProcessExperience = lazy(() => import("./pages/ProcessExperience").then(m => ({ default: m.ProcessExperience })));
+const WorkPage = lazy(() => import("./pages/WorkPage").then(m => ({ default: m.WorkPage })));
+const ProjectPage = lazy(() => import("./pages/WorkPage").then(m => ({ default: m.ProjectPage })));
+const ContactPage = lazy(() => import("./pages/ContactPage").then(m => ({ default: m.ContactPage })));
+const AuditPage = lazy(() => import("./pages/BusinessPages").then(m => ({ default: m.AuditPage })));
+const StudioPage = lazy(() => import("./pages/BusinessPages").then(m => ({ default: m.StudioPage })));
+const InfoPage = lazy(() => import("./pages/SupportingPages").then(m => ({ default: m.InfoPage })));
+const NotFoundPage = lazy(() => import("./pages/SupportingPages").then(m => ({ default: m.NotFoundPage })));
+const PackagesPage = lazy(() => import("./pages/SupportingPages").then(m => ({ default: m.PackagesPage })));
+const AdminPage = lazy(() => import("./pages/AdminPage"));
 export default function App() {
   return (
     <BrowserRouter>
+      <Suspense fallback={<div role="status" style={{padding:"160px 6%", minHeight:"60vh"}}>Loading page...</div>}>
       <Routes>
+        <Route path="admin/*" element={<AdminPage />} />
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="services" element={<ServicesPage />} />
@@ -30,6 +38,7 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

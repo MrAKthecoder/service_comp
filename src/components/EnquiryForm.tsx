@@ -6,15 +6,28 @@ export function EnquiryForm({ audit = false }: { audit?: boolean }) {
   const [params] = useSearchParams();
   const callback = params.get("mode") === "callback";
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   return (
     <form
       className="enquiry-form"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        if (sending) return;
+        const form = e.currentTarget;
+        setSending(true); setError(""); setSubmitted(false);
+        try {
+          const response = await fetch("/api/enquiries", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({...Object.fromEntries(new FormData(form)), type: audit ? "audit" : callback ? "callback" : "enquiry"}), signal: AbortSignal.timeout(15000) });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || "Unable to send your request.");
+          setSubmitted(true); form.reset();
+        } catch (err) { setError(err instanceof Error && err.name !== "SyntaxError" ? err.message : "Unable to send your request. Please try again."); }
+        finally { setSending(false); }
       }}
       onChange={() => setSubmitted(false)}
     >
+      <input name="companyWebsite" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{display:"none"}} />
+      <fieldset disabled={sending} style={{border:0,padding:0,margin:0,minWidth:0}}>
       <div className="form-grid">
         <label>
           Your name *
@@ -101,16 +114,18 @@ export function EnquiryForm({ audit = false }: { audit?: boolean }) {
           </>
         )}
       </div>
-      <button className="button dark" type="submit">
-        {audit
-          ? "Preview audit request"
+      <button className="button dark" type="submit" disabled={sending || submitted}>
+        {sending ? "Sending…" : audit
+          ? "Request free audit"
           : callback
-            ? "Preview callback request"
-            : "Preview enquiry"}
+            ? "Request callback"
+            : "Send enquiry"}
         <ArrowUpRight size={18} />
       </button>
+      </fieldset>
+      {error && <p role="alert">{error}</p>}
       <p className="fine-print">
-        Frontend preview: nothing is sent or stored.{" "}
+        We use your details to respond to your request.{" "}
         <Link to="/privacy">Privacy details</Link>
       </p>
       <div role="status" aria-live="polite">
@@ -118,11 +133,9 @@ export function EnquiryForm({ audit = false }: { audit?: boolean }) {
           <div className="form-success">
             <CheckCircle2 />
             <div>
-              <strong>Your details are ready.</strong>
+              <strong>Thanks — we’ve received your request.</strong>
               <p>
-                This is a demo confirmation. No request was sent. Once
-                connected, this step will confirm receipt and explain what
-                happens next.
+                Your details have been saved. We’ll get back to you using the contact details you provided.
               </p>
             </div>
           </div>
