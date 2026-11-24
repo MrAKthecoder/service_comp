@@ -1,0 +1,103 @@
+.why-forma {
+  background: #173628;
+  color: #f5f4eb;
+  padding: 110px 7%;
+}
+
+.why-forma > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.6fr);
+  column-gap: 12%;
+  align-items: end;
+  max-width: 1320px;
+  margin: 0 auto 56px;
+}
+
+.why-forma .eyebrow {
+  grid-column: 1 / -1;
+  color: #b5d7b4;
+  margin-bottom: 22px;
+}
+
+.why-forma h2 {
+  font-size: clamp(42px, 5.2vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+
+.why-forma h2 em {
+  color: #b9d69d;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.why-forma > header > p {
+  color: #c4d1c4;
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 5px;
+}
+
+.why-forma-list {
+  max-width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #ffffff2b;
+}
+
+.why-forma-list article {
+  padding: 30px 34px 8px 0;
+  min-height: 250px;
+}
+
+.why-forma-list article + article {
+  border-left: 1px solid #ffffff2b;
+  padding-left: 34px;
+}
+
+.why-forma-mark {
+  display: flex;
+  justify-content: space-between;
+  color: #9ee582;
+  margin-bottom: 50px;
+}
+
+.why-forma-mark span {
+  color: #aec6ae;
+  font: 11px monospace;
+}
+
+.why-forma-list h3 {
+  font-size: 25px;
+  letter-spacing: -0.9px;
+  margin: 0 0 14px;
+}
+
+.why-forma-list p {
+  color: #b6c7b8;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 330px;
+}
+
+.why-forma-check {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-top: 28px;
+  color: #d9ead5;
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .why-forma { padding: 78px 6%; }
+  .why-forma > header { display: block; margin-bottom: 42px; }
+  .why-forma > header > p { margin-top: 24px; max-width: 440px; }
+  .why-forma-list { grid-template-columns: 1fr; }
+  .why-forma-list article { min-height: 0; padding: 27px 0; }
+  .why-forma-list article + article { border-left: 0; border-top: 1px solid #ffffff2b; padding-left: 0; }
+  .why-forma-mark { margin-bottom: 24px; }
+}

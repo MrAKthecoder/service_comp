@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Search, MousePointer2, MessageCircle } from "lucide-react";
 import { ClientFAQ } from "../components/ClientFAQ";
 import { GrowthServices } from "../components/GrowthServices";
+import { GettingStarted } from "../components/GettingStarted";
+import { WhyForma } from "../components/WhyForma";
 
 export function HomePage() {
   return (
@@ -24,7 +26,10 @@ export function HomePage() {
             <br />
             need next?
           </h2>
-          <p>Choose the support your business needs.</p>
+          <p>
+            Practical support for the moments that matter: getting found,
+            explaining what you do and making it easy to get in touch.
+          </p>
         </div>
         <GrowthServices />
         <div className="services-overview-action">
@@ -33,6 +38,8 @@ export function HomePage() {
           </Link>
         </div>
       </section>
+      <WhyForma />
+      <GettingStarted />
       <section className="home-audit-invite">
         <div>
           <span className="eyebrow">NOT SURE WHAT YOU NEED?</span>

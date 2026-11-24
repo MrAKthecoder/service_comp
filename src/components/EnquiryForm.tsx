@@ -48,6 +48,17 @@ export function EnquiryForm({ audit = false }: { audit?: boolean }) {
             required={!callback}
           />
         </label>
+        {!callback && !audit && (
+          <label>
+            Phone / WhatsApp (optional)
+            <input
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              placeholder="Include country code"
+            />
+          </label>
+        )}
         {callback && (
           <label className="full">
             Phone number *

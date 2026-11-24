@@ -23,3 +23,4 @@ createRoot(document.getElementById("root")!).render(
 );
 import "./styles/hero-film.css";
 import "./styles/green-highlights.css";
+import "./styles/why-forma.css";
